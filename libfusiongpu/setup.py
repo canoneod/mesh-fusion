@@ -23,10 +23,25 @@ if 'Linux' in platform.system():
   extra_link_args.append('-fopenmp')
 
 
+# setup(
+#   name="cyfusion",
+#   cmdclass= {'build_ext': build_ext},
+#   ext_modules=[
+#     Extension('cyfusion',
+#       ['cyfusion.pyx'],
+#       language='c++',
+#       library_dirs=['./build/'],
+#       libraries=['m', "fusion_gpu"],
+#       include_dirs=[np.get_include()],
+#       extra_compile_args=extra_compile_args,
+#       extra_link_args=extra_link_args
+#     )
+#   ]
+# )
 setup(
   name="cyfusion",
   cmdclass= {'build_ext': build_ext},
-  ext_modules=[
+  ext_modules=cythonize([
     Extension('cyfusion',
       ['cyfusion.pyx'],
       language='c++',
@@ -36,5 +51,5 @@ setup(
       extra_compile_args=extra_compile_args,
       extra_link_args=extra_link_args
     )
-  ]
+  ])
 )
