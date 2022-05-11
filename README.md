@@ -24,6 +24,7 @@ Also check the corresponding [project page](http://davidstutz.de/projects/shape-
 - Current for CUDA 11.6 compatiblity and other dependencies, added in environment.yml
 - In libfusiongpu/ CMakelists.txt was modifed to fit my gpu(1050ti) compute compatiblity(mine supported 6.1)
 - modified __init__.py of libfusiongpu/ and librender/ & copied *.so files of each to root folder and renamed them.
+- simplification.mlx was changed to fit to pymeshlab
 - for other troubles and usages, check out original repository
 
 Copyright (c) 2018 David Stutz, Max-Planck-Gesellschaft
